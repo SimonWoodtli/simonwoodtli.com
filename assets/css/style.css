@@ -40,14 +40,20 @@ img {
 
 body {
 
+
 }
+.hidden {
+  display: none;
+}
+
 
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-
+header, .main, .hidden, .projects, .blog {
+  width: 85%;
+  margin: 0 auto;
 }
 
 footer {
