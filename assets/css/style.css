@@ -44,20 +44,28 @@ body {
 
 header {
   border-bottom: solid 3px #62d4e5;
-  /*display: inline-block;*/
 }
 
+/* hidden elements like services, main-about */
 .hidden {
   display: none;
 }
 
+/* header nav no bullets */
+header li {
+  list-style-type: none;
+}
 
+/* adjust size of header icons */
+.icon {
+  font-size: 1.5rem;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-h1 {
-}
+
+/* need to figure out how to avoid div wrapper for grid*/
 .wrapper {
   display: grid;
   grid-template-columns: 2.669rem 1fr 2.669rem;
@@ -68,12 +76,35 @@ h1 {
     "projects projects projects",
     "blog blog blog";*/
 }
+
 header, .main, .services, .projects, .blog {
   width: 100%;
   grid-column: 2 / 3;
 }
-header {
+
+/* flex containers for header */
+header, header ul {
+  display: flex;
+  flex-flow: row wrap;
 }
+
+/* adjust layout for icons */
+header ul {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+/* set space between icons */
+header li:not(:first-child) {
+  margin-left: 1rem;
+}
+
+header li {
+}
+
+
+
+
 .main {
 }
 .services {
@@ -86,3 +117,6 @@ header {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.icon > .label {
+  display: none;
+}
